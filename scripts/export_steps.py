@@ -23,7 +23,11 @@ def convert_fcstd_to_step(fcstd_path):
         
     FreeCAD.closeDocument(doc.Name)
 
-if __name__ == "__main__":
-    for file_path in sys.argv[1:]:
-        if file_path.lower().endswith(".fcstd") and os.path.exists(file_path):
+# FreeCAD (freecadcmd) запускает скрипты с __name__ == имя файла,
+# а не "__main__", поэтому проверка выполняется по наличию аргументов.
+for file_path in sys.argv[1:]:
+    if file_path.lower().endswith(".fcstd"):
+        if os.path.exists(file_path):
             convert_fcstd_to_step(file_path)
+        else:
+            print(f"[FreeCAD Hook] Файл не найден: {file_path}")
