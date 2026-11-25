@@ -1,0 +1,8 @@
+# Служебные скрипты конвертации FreeCAD -> STEP.
+# Исключаем из статистики языков GitHub, чтобы репозиторий
+# не определялся как Python-проект.
+scripts/** linguist-vendored
+
+# STEP/STL — основной контент проекта
+*.step linguist-language=STEP
+*.stp  linguist-language=STEP
