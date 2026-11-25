@@ -1,0 +1,10 @@
+# Резервные копии FreeCAD (*.FCBak)
+*.FCBak
+
+# Временные файлы FreeCAD
+*.FCStd1
+*.FCStd2
+.~lock.*
+
+# macOS
+.DS_Store
